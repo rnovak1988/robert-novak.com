@@ -3,4 +3,6 @@ firewall_allowed_tcp_ports:
   - "22"
   - "80"
   - "443"
+firewall_additional_rules:
+  - "iptables -A INPUT -p icmp -j ACCEPT"
 

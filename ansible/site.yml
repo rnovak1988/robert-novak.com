@@ -1,4 +1,10 @@
 ---
 - hosts: all
   roles:
-    - role: ansible-role-firewall
+    - role: firewall
+    - role: nginx
+      nginx_sites:
+        default:
+          - listen 80
+          - server_name robert-novak.local
+          - root '/vagrant/data'
