@@ -1,4 +1,0 @@
----
-ansible_user: "{{ lookup('env', 'ANSIBLE_USERNAME') }}"
-ansible_ssh_private_key: "{{ lookup('env', 'ANSIBLE_KEY') }}"
-
