@@ -1,6 +1,0 @@
-[submodule "ansible/roles/nginx"]
-	path = ansible/roles/nginx
-	url = git@github.com:jdauphant/ansible-role-nginx.git
-[submodule "ansible/roles/firewall"]
-	path = ansible/roles/firewall
-	url = git@github.com:geerlingguy/ansible-role-firewall.git
