@@ -1,0 +1,8 @@
+---
+- name: Copy iptables config
+  template: src=iptables dest=/etc/sysconfig/iptables
+  notify: reload iptables
+
+- name: Copy ip6tables config
+  template: src=ip6tables dest=/etc/sysconfig/ip6tables
+

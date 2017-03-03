@@ -1,0 +1,6 @@
+---
+- name: reload iptables
+  shell: iptables-restore /etc/sysconfig/iptables
+
+- name: reload ip6tables
+  shell: ip6tables-restore /etc/sysconfig/ip6tables

@@ -1,0 +1,26 @@
+# Firewall configuration written by system-config-firewall
+# Manual customization of this file is not recommended.
+*filter
+
+-A INPUT -i lo -j ACCEPT
+-A INPUT -d 127.0.0.0/8 -j REJECT
+
+-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+-A OUTPUT -j ACCEPT
+
+#       Allow anything from myself
+{% for ip in whitelisted_ips %}
+-A INPUT -s {{ ip }} -j ACCEPT
+{% endfor %}
+
+
+-A INPUT -m limit --limit 10/min -j LOG --log-prefix "iptables denied: " --log-level 7
+
+-A INPUT -j DROP
+-A FORWARD -j DROP
+
+-P INPUT DROP
+-P FORWARD DROP
+
+COMMIT
